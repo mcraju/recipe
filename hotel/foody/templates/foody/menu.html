@@ -1,0 +1,13 @@
+<h1> Hey Welcome to all FOODIES!!! </h1>
+
+{% if foody_menu %}
+    <ul>
+    {% for f in foody_menu %}
+        <li><a href="/foody/{{f.id}}">{{ f.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+        <P>No Foods are available</P>
+{% endif %}
+<a href="{% url 'foody:make_over' %}"> Create New </a>
+
